@@ -14,7 +14,12 @@ import { Item6 } from "./grid/Item6";
 import { Item7 } from "./grid/Item7";
 import { Item8 } from "./grid/Item8";
 import { Item9 } from "./grid/Item9";
-
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Splitting from "splitting";
+import { preloadFonts } from "./js/utils.js";
+import Lenis from "@studio-freight/lenis";
+import Logopath from "./logos/logo.png";
 const Wrapper = ({ name, children }: { name: string; children: ReactNode }) => {
   return (
     <div className="relative rounded-md cursor-pointer bg-white/10 card p-[1px]">
@@ -39,6 +44,130 @@ const Wrapper = ({ name, children }: { name: string; children: ReactNode }) => {
 };
 
 function App() {
+  useEffect(() => {
+    const slidingText = document.querySelector(".sliding-text");
+    if (slidingText) {
+      slidingText.addEventListener("animationiteration", () => {
+        slidingText.style.transform = "translateX(0)";
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    Splitting();
+
+    const initSmoothScrolling = () => {
+      const lenis = new Lenis({
+        lerp: 0.2,
+        smooth: true,
+      });
+
+      lenis.on("scroll", () => ScrollTrigger.update());
+
+      const scrollFn = (time: number) => {
+        lenis.raf(time);
+        requestAnimationFrame(scrollFn);
+      };
+
+      requestAnimationFrame(scrollFn);
+    };
+
+    const initAnimations = () => {
+      const fx25Titles = document.querySelectorAll<HTMLElement>(
+        ".content__title[data-splitting][data-effect25]"
+      );
+
+      fx25Titles.forEach((title) => {
+        gsap.fromTo(
+          title.querySelectorAll(".char"),
+          {
+            "will-change": "transform",
+            transformOrigin: "50% 100%",
+            scaleY: 0,
+          },
+          {
+            ease: "power3.in",
+            opacity: 1,
+            scaleY: 1,
+            stagger: 0.05,
+            scrollTrigger: {
+              trigger: title,
+              start: "center center",
+              end: "+=500%",
+              scrub: true,
+              pin: title.parentNode,
+            },
+          }
+        );
+      });
+
+      const fx26Titles = document.querySelectorAll<HTMLElement>(
+        ".content__title[data-splitting][data-effect26]"
+      );
+
+      fx26Titles.forEach((title) => {
+        const words = [...title.querySelectorAll(".word")];
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: title,
+            start: "center center",
+            end: "+=100%",
+            scrub: true,
+            pin: title.parentNode,
+          },
+        });
+        for (const [wordPosition, word] of words.entries()) {
+          tl.fromTo(
+            word.querySelectorAll(".char"),
+            {
+              "will-change": "transform",
+              transformOrigin: () =>
+                !wordPosition % 2 ? "50% 0%" : "50% 100%",
+              scaleY: 0,
+            },
+            {
+              ease: "power1.inOut",
+              scaleY: 1,
+              stagger: {
+                amount: 0.3,
+                from: "center",
+              },
+            },
+            0
+          );
+        }
+      });
+    };
+    preloadFonts("cvn8slu").then(() => {
+      document.body.classList.remove("loading");
+      initSmoothScrolling();
+      initAnimations();
+    });
+
+    // Card hover effect
+    const cards = document.querySelectorAll<HTMLDivElement>(".card");
+
+    const handlePointerMove = (e: PointerEvent) => {
+      cards.forEach((card) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
+      });
+    };
+
+    document
+      .querySelector<HTMLDivElement>("[data-gird]")
+      ?.addEventListener("pointermove", handlePointerMove);
+
+    return () => {
+      document
+        .querySelector<HTMLDivElement>("[data-gird]")
+        ?.removeEventListener("pointermove", handlePointerMove);
+    };
+  }, []);
   const items = [
     { component: Item1, name: "Rings" },
     { component: Item2, name: "Loop" },
@@ -80,10 +209,99 @@ function App() {
 
   return (
     <div className="min-h-screen text-white bg-[#0c0c0c] select-none background">
-      <div className="container p-5 pb-20 mx-auto ">
+      <div className="container pb-20">
         <Hero></Hero>
+        <div className="relative border border-white/10 h-[80vh] w-[100vw] flex flex-col justify-center items-center">
+          <h1 className="absolute z-10 text-[7em] text-[#FF8E01] zen-dots-regular font-medium">
+            $
+          </h1>
+          <Canvas className="absolute top-0 left-0 w-full h-full">
+            <Item3 />
+          </Canvas>
+        </div>
+        <div className="content">
+          <h2
+            className="content__title content__title--left"
+            data-splitting
+            data-effect25
+          >
+            <span className="font-13 font-medium font-height-medium ">
+              <span className="zen-dots-regular ">
+                Inve<span className="text-[#FF8E01]">$</span>to
+              </span>{" "}
+              Modern investment
+              <br />
+              management combining cutting
+              <span className="text-[#FF8E01]">-</span>edge
+              <br />
+              technology with personalized
+              <br /> expertise for 21st<span className="text-[#FF8E01]">-</span>
+              century <br />
+              clients<span className="text-[#FF8E01]">.</span>
+            </span>
+          </h2>
+        </div>
+        {/* <div className="flex flex-col h-[60vh] px-20 w-[100vw]">
+          <div className="w-1/3 p-4 flex flex-col justify-center items-center">
+            <Canvas>
+              <Item4 />
+            </Canvas>
+          </div>
+        </div> */}
+        {/* <div className="bg-gray-100 py-10">
+          <div className="overflow-hidden relative">
+            <div className="flex space-x-10 animate-slide">
+              <img src={Logopath} alt="Company 1" className="h-16" />
+              <img src={Logopath} alt="Company 2" className="h-16" />
+              <img src={Logopath} alt="Company 3" className="h-16" />
+              <img src={Logopath} alt="Company 4" className="h-16" />
+              <img src={Logopath} alt="Company 5" className="h-16" />
+              <img src={Logopath} alt="Company 1" className="h-16" />
+              <img src={Logopath} alt="Company 2" className="h-16" />
+              <img src={Logopath} alt="Company 3" className="h-16" />
+              <img src={Logopath} alt="Company 4" className="h-16" />
+              <img src={Logopath} alt="Company 5" className="h-16" />
+            </div>
+          </div>
+        </div> */}
+        <div className="border border-white/10 py-10 w-[100vw] mt-[150px]">
+          <div className="overflow-hidden relative  w-[100%]">
+            <div className="flex space-x-10 animate-slide w-[100%]">
+              <img src={Logopath} alt="Company 1" className="h-16" />
+              <img src={Logopath} alt="Company 2" className="h-16" />
+              <img src={Logopath} alt="Company 3" className="h-16" />
+              <img src={Logopath} alt="Company 4" className="h-16" />
+              <img src={Logopath} alt="Company 5" className="h-16" />
+              <img src={Logopath} alt="Company 1" className="h-16" />
+              <img src={Logopath} alt="Company 2" className="h-16" />
+              <img src={Logopath} alt="Company 3" className="h-16" />
+              <img src={Logopath} alt="Company 4" className="h-16" />
+              <img src={Logopath} alt="Company 5" className="h-16" />
+              <img src={Logopath} alt="Company 3" className="h-16" />
+              <img src={Logopath} alt="Company 4" className="h-16" />
+              <img src={Logopath} alt="Company 5" className="h-16" />
+              <img src={Logopath} alt="Company 3" className="h-16" />
+              <img src={Logopath} alt="Company 4" className="h-16" />
+              <img src={Logopath} alt="Company 5" className="h-16" />
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute top-0 z-20 content content--full">
+          <h2 className="content__title" data-splitting data-effect26>
+            <span className="font-upper font-12 zen-dots-regular">Time is</span>
+            <span className="font-upper font-17 zen-dots-regular">
+              ticking<span className="text-[#FF8E01]">!</span>
+            </span>
+          </h2>
+        </div>
+        <div className="relative h-[100vh] w-[100vw] flex flex-col justify-center items-center">
+          <Canvas className="absolute top-20 left-0 w-full h-full">
+            <Item11 />
+          </Canvas>
+        </div>
         <div className="relative mt-5 overflow-hidden">
-          <div
+          {/* <div
             className="grid h-full gap-5 overflow-hidden group grid-clos-1 md:grid-cols-2 lg:grid-cols-4"
             data-gird
           >
@@ -104,7 +322,7 @@ function App() {
             >
               <View.Port />
             </Canvas>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
