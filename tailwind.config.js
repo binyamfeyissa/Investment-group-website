@@ -4,10 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "noto-sans-ethiopic": ["Noto Sans Ethiopic", "sans-serif"],
-        "abyssinica-sil": ["Abyssinica SIL", "serif"],
-        "ethiopic-wookianos": ["Ethiopic Wookianos", "serif"],
-        "ethiopic-hiwua": ["Ethiopic Hiwua", "serif"],
+        "aeonik-regular": ["Aeonik Regular", "sans-serif"],
       },
     },
   },

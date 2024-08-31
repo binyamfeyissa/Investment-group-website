@@ -286,7 +286,189 @@ function App() {
             </div>
           </div>
         </div>
+        <div className="w-[100vw] h-[100%] px-20 flex flex-row justify-center">
+          <div className="pt-[200px] w-[40%]">
+            <div className="sticky top-[10rem]">
+              <p className="mb-[16px] text-2xl font-thin leading-7">
+                Our product offerings
+              </p>
+              <h1 className="my-0 text-5xl font-normal leading-[50px]">
+                Discover your investment potential
+              </h1>
+            </div>
+          </div>
+          <div className="flex flex-col  w-[60%] pt-[200px] pl-20 gap-20">
+            <div className="border border-white corde p-8 rounded-[24px]  text-white relative">
+              <div className="offer-card-hero">
+                <img
+                  src="https://cdn.prod.website-files.com/6477332607fa08930fe00261/647ef2863d065963ee9c6a2a_decor-wealth%20management.png"
+                  loading="lazy"
+                  alt=""
+                  className="h-[40px] mb-[50px]"
+                />
+              </div>
+              <h2 className="border-b border-white mb-6 pb-[74px] text-[56px] leading-[58px]">
+                Wealth management
+              </h2>
 
+              <p className="text-xl font-normal leading-6">
+                Advising individuals and families with our expert team,
+                investing your money based on your goals, and providing access
+                to the Cadro app and Cadro Club community.
+              </p>
+              <div className="absolute top-6 right-6 flex items-center justify-center w-[94px] h-[94px] bg-white rounded-full">
+                <div className="ic-circle-wrap">
+                  <img
+                    src="https://cdn.prod.website-files.com/6477332607fa08930fe00261/648716ed11e52910fe26f283_Arrow_Up_Right_L.svg"
+                    loading="lazy"
+                    alt=""
+                    className="icon is-absolute"
+                    style={{
+                      transform:
+                        "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+                      transformStyle: "preserve-3d",
+                    }}
+                  />
+                  <div
+                    className="ic-wrap is-circle is-large"
+                    style={{ opacity: 1 }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div className="border border-white corde p-8 rounded-[24px]  text-white relative">
+              <div className="offer-card-hero">
+                <img
+                  src="https://cdn.prod.website-files.com/6477332607fa08930fe00261/647ef2863d065963ee9c6a2a_decor-wealth%20management.png"
+                  loading="lazy"
+                  alt=""
+                  className="h-[40px] mb-[50px]"
+                />
+              </div>
+              <h2 className="border-b border-white mb-6 pb-[74px] text-[56px] leading-[58px]">
+                Wealth management
+              </h2>
+
+              <p className="text-xl font-normal leading-6">
+                Advising individuals and families with our expert team,
+                investing your money based on your goals, and providing access
+                to the Cadro app and Cadro Club community.
+              </p>
+              <div className="absolute top-6 right-6 flex items-center justify-center w-[94px] h-[94px] bg-white rounded-full">
+                <div className="ic-circle-wrap">
+                  <img
+                    src="https://cdn.prod.website-files.com/6477332607fa08930fe00261/648716ed11e52910fe26f283_Arrow_Up_Right_L.svg"
+                    loading="lazy"
+                    alt=""
+                    className="icon is-absolute"
+                    style={{
+                      transform:
+                        "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+                      transformStyle: "preserve-3d",
+                    }}
+                  />
+                  <div
+                    className="ic-wrap is-circle is-large"
+                    style={{ opacity: 1 }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div className="border border-white corde p-8 rounded-[24px]  text-white relative">
+              <div className="offer-card-hero">
+                <img
+                  src="https://cdn.prod.website-files.com/6477332607fa08930fe00261/647ef2863d065963ee9c6a2a_decor-wealth%20management.png"
+                  loading="lazy"
+                  alt=""
+                  className="h-[40px] mb-[50px]"
+                />
+              </div>
+              <h2 className="border-b border-white mb-6 pb-[74px] text-[56px] leading-[58px]">
+                Wealth management
+              </h2>
+
+              <p className="text-xl font-normal leading-6">
+                Advising individuals and families with our expert team,
+                investing your money based on your goals, and providing access
+                to the Cadro app and Cadro Club community.
+              </p>
+              <div className="absolute top-6 right-6 flex items-center justify-center w-[94px] h-[94px] bg-white rounded-full">
+                <div className="ic-circle-wrap">
+                  <img
+                    src="https://cdn.prod.website-files.com/6477332607fa08930fe00261/648716ed11e52910fe26f283_Arrow_Up_Right_L.svg"
+                    loading="lazy"
+                    alt=""
+                    className="icon is-absolute"
+                    style={{
+                      transform:
+                        "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+                      transformStyle: "preserve-3d",
+                    }}
+                  />
+                  <div
+                    className="ic-wrap is-circle is-large"
+                    style={{ opacity: 1 }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div className="border border-white corde p-8 rounded-[24px]  text-white relative">
+              <div className="offer-card-hero">
+                <img
+                  src="https://cdn.prod.website-files.com/6477332607fa08930fe00261/647ef2863d065963ee9c6a2a_decor-wealth%20management.png"
+                  loading="lazy"
+                  alt=""
+                  className="h-[40px] mb-[50px]"
+                />
+              </div>
+              <h2 className="border-b border-white mb-6 pb-[74px] text-[56px] leading-[58px]">
+                Wealth management
+              </h2>
+
+              <p className="text-xl font-normal leading-6">
+                Advising individuals and families with our expert team,
+                investing your money based on your goals, and providing access
+                to the Cadro app and Cadro Club community.
+              </p>
+              <div className="absolute top-6 right-6 flex items-center justify-center w-[94px] h-[94px] bg-white rounded-full">
+                <div className="ic-circle-wrap">
+                  <img
+                    src="https://cdn.prod.website-files.com/6477332607fa08930fe00261/648716ed11e52910fe26f283_Arrow_Up_Right_L.svg"
+                    loading="lazy"
+                    alt=""
+                    className="icon is-absolute"
+                    style={{
+                      transform:
+                        "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+                      transformStyle: "preserve-3d",
+                    }}
+                  />
+                  <div
+                    className="ic-wrap is-circle is-large"
+                    style={{ opacity: 1 }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="w-[100vw] h-[100%] p-20 flex flex-row justify-center">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{
+              backgroundImage:
+                "url('https://cdn.prod.website-files.com/6477332607fa08930fe00261/648829e97ad23fd8992a626e_CADRO SHOWREEL V2-poster-00001.jpg')",
+              objectFit: "cover",
+            }}
+            className="object-cover rounded-[24px] bg-center bg-cover w-full h-full m-auto inset-[-100%]"
+          >
+            <source src="https://cdn.prod.website-files.com/6477332607fa08930fe00261/648829e97ad23fd8992a626e_CADRO SHOWREEL V2-transcode.mp4" />
+            <source src="https://cdn.prod.website-files.com/6477332607fa08930fe00261/648829e97ad23fd8992a626e_CADRO SHOWREEL V2-transcode.webm" />
+          </video>
+        </div>
         <div className="absolute top-0 z-20 content content--full">
           <h2 className="content__title" data-splitting data-effect26>
             <span className="font-upper font-12 zen-dots-regular">Time is</span>
