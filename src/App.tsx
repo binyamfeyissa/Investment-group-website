@@ -49,7 +49,7 @@ function App() {
     const slidingText = document.querySelector(".sliding-text");
     if (slidingText) {
       slidingText.addEventListener("animationiteration", () => {
-        slidingText.style.transform = "translateX(0)";
+        (slidingText as HTMLElement).style.transform = "translateX(0)";
       });
     }
   }, []);
@@ -60,7 +60,7 @@ function App() {
     const initSmoothScrolling = () => {
       const lenis = new Lenis({
         lerp: 0.2,
-        smooth: true,
+        // Remove 'smooth' if it's not a valid property
       });
 
       lenis.on("scroll", () => ScrollTrigger.update());
@@ -96,7 +96,7 @@ function App() {
               start: "center center",
               end: "+=500%",
               scrub: true,
-              pin: title.parentNode,
+              pin: title.parentNode as HTMLElement, // Cast to HTMLElement
             },
           }
         );
@@ -114,7 +114,7 @@ function App() {
             start: "center center",
             end: "+=100%",
             scrub: true,
-            pin: title.parentNode,
+            pin: title.parentNode as HTMLElement, // Cast to HTMLElement
           },
         });
         for (const [wordPosition, word] of words.entries()) {
@@ -207,6 +207,10 @@ function App() {
         ?.removeEventListener("pointermove", handlePointerMove);
     };
   }, []);
+
+  const someString = "123";
+  const value = parseInt(someString, 10);
+  const result = value + 10;
 
   return (
     <div className="min-h-screen text-white bg-[#0c0c0c] select-none background">
