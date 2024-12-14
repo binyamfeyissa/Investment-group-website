@@ -18,6 +18,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Splitting from "splitting";
 import { preloadFonts } from "./js/utils.js";
+import vid from "./vid.mp4";
 import Lenis from "@studio-freight/lenis";
 import Logopath from "./logos/logo.png";
 const Wrapper = ({ name, children }: { name: string; children: ReactNode }) => {
@@ -213,7 +214,7 @@ function App() {
         <Hero></Hero>
         <div className="relative border border-white/10 h-[80vh] w-[100vw] flex flex-col justify-center items-center">
           <h1 className="absolute z-10 text-[7em] text-[#FF8E01] zen-dots-regular font-medium">
-            $
+            መላ
           </h1>
           <Canvas className="absolute top-0 left-0 w-full h-full">
             <Item3 />
@@ -227,43 +228,20 @@ function App() {
           >
             <span className="font-13 font-medium font-height-medium ">
               <span className="zen-dots-regular ">
-                Inve<span className="text-[#FF8E01]">$</span>to
-              </span>{" "}
-              Modern investment
+                <span className="text-[#FF8E01]">መላ </span>
+              </span>
+              Modern investment manages
               <br />
-              management combining cutting
+              your investment with cutting
               <span className="text-[#FF8E01]">-</span>edge
               <br />
-              technology with personalized
-              <br /> expertise for 21st<span className="text-[#FF8E01]">-</span>
+              technology personalized
+              <br /> for 21st<span className="text-[#FF8E01]">-</span>
               century <br />
               clients<span className="text-[#FF8E01]">.</span>
             </span>
           </h2>
         </div>
-        {/* <div className="flex flex-col h-[60vh] px-20 w-[100vw]">
-          <div className="w-1/3 p-4 flex flex-col justify-center items-center">
-            <Canvas>
-              <Item4 />
-            </Canvas>
-          </div>
-        </div> */}
-        {/* <div className="bg-gray-100 py-10">
-          <div className="overflow-hidden relative">
-            <div className="flex space-x-10 animate-slide">
-              <img src={Logopath} alt="Company 1" className="h-16" />
-              <img src={Logopath} alt="Company 2" className="h-16" />
-              <img src={Logopath} alt="Company 3" className="h-16" />
-              <img src={Logopath} alt="Company 4" className="h-16" />
-              <img src={Logopath} alt="Company 5" className="h-16" />
-              <img src={Logopath} alt="Company 1" className="h-16" />
-              <img src={Logopath} alt="Company 2" className="h-16" />
-              <img src={Logopath} alt="Company 3" className="h-16" />
-              <img src={Logopath} alt="Company 4" className="h-16" />
-              <img src={Logopath} alt="Company 5" className="h-16" />
-            </div>
-          </div>
-        </div> */}
         <div className="border border-white/10 py-10 w-[100vw] mt-[150px]">
           <div className="overflow-hidden relative  w-[100%]">
             <div className="flex space-x-10 animate-slide w-[100%]">
@@ -275,6 +253,14 @@ function App() {
               <img src={Logopath} alt="Company 1" className="h-16" />
               <img src={Logopath} alt="Company 2" className="h-16" />
               <img src={Logopath} alt="Company 3" className="h-16" />
+              <img src={Logopath} alt="Company 4" className="h-16" />
+              <img src={Logopath} alt="Company 5" className="h-16" />
+              <img src={Logopath} alt="Company 3" className="h-16" />
+              <img src={Logopath} alt="Company 4" className="h-16" />
+              <img src={Logopath} alt="Company 5" className="h-16" />
+              <img src={Logopath} alt="Company 3" className="h-16" />
+              <img src={Logopath} alt="Company 4" className="h-16" />
+              <img src={Logopath} alt="Company 5" className="h-16" />
               <img src={Logopath} alt="Company 4" className="h-16" />
               <img src={Logopath} alt="Company 5" className="h-16" />
               <img src={Logopath} alt="Company 3" className="h-16" />
@@ -297,24 +283,23 @@ function App() {
               </h1>
             </div>
           </div>
-          <div className="flex flex-col  w-[60%] pt-[200px] pl-20 gap-20">
-            <div className="border border-white corde p-8 rounded-[24px]  text-white relative">
+          <div className="flex flex-col w-[60%] pt-[200px] pl-20 gap-20">
+            <div className="border border-white corde p-8 rounded-[24px] text-white relative">
               <div className="offer-card-hero">
                 <img
                   src="https://cdn.prod.website-files.com/6477332607fa08930fe00261/647ef2863d065963ee9c6a2a_decor-wealth%20management.png"
                   loading="lazy"
-                  alt=""
+                  alt="Real Estate"
                   className="h-[40px] mb-[50px]"
                 />
               </div>
               <h2 className="border-b border-white mb-6 pb-[74px] text-[56px] leading-[58px]">
-                Wealth management
+                Real Estate
               </h2>
-
               <p className="text-xl font-normal leading-6">
-                Advising individuals and families with our expert team,
-                investing your money based on your goals, and providing access
-                to the Cadro app and Cadro Club community.
+                Invest in prime real estate properties with our expert guidance.
+                We help you navigate the market to find the best opportunities
+                for growth and stability.
               </p>
               <div className="absolute top-6 right-6 flex items-center justify-center w-[94px] h-[94px] bg-white rounded-full">
                 <div className="ic-circle-wrap">
@@ -336,23 +321,22 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="border border-white corde p-8 rounded-[24px]  text-white relative">
+            <div className="border border-white corde p-8 rounded-[24px] text-white relative">
               <div className="offer-card-hero">
                 <img
                   src="https://cdn.prod.website-files.com/6477332607fa08930fe00261/647ef2863d065963ee9c6a2a_decor-wealth%20management.png"
                   loading="lazy"
-                  alt=""
+                  alt="Forex"
                   className="h-[40px] mb-[50px]"
                 />
               </div>
               <h2 className="border-b border-white mb-6 pb-[74px] text-[56px] leading-[58px]">
-                Wealth management
+                Forex
               </h2>
-
               <p className="text-xl font-normal leading-6">
-                Advising individuals and families with our expert team,
-                investing your money based on your goals, and providing access
-                to the Cadro app and Cadro Club community.
+                Take advantage of the global currency market with our forex
+                investment strategies. Our team provides insights and tools to
+                maximize your returns.
               </p>
               <div className="absolute top-6 right-6 flex items-center justify-center w-[94px] h-[94px] bg-white rounded-full">
                 <div className="ic-circle-wrap">
@@ -374,23 +358,22 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="border border-white corde p-8 rounded-[24px]  text-white relative">
+            <div className="border border-white corde p-8 rounded-[24px] text-white relative">
               <div className="offer-card-hero">
                 <img
                   src="https://cdn.prod.website-files.com/6477332607fa08930fe00261/647ef2863d065963ee9c6a2a_decor-wealth%20management.png"
                   loading="lazy"
-                  alt=""
+                  alt="Bitcoin"
                   className="h-[40px] mb-[50px]"
                 />
               </div>
               <h2 className="border-b border-white mb-6 pb-[74px] text-[56px] leading-[58px]">
-                Wealth management
+                Bitcoin
               </h2>
-
               <p className="text-xl font-normal leading-6">
-                Advising individuals and families with our expert team,
-                investing your money based on your goals, and providing access
-                to the Cadro app and Cadro Club community.
+                Dive into the world of cryptocurrencies with our bitcoin
+                investment services. We provide the expertise and resources to
+                help you navigate this dynamic market.
               </p>
               <div className="absolute top-6 right-6 flex items-center justify-center w-[94px] h-[94px] bg-white rounded-full">
                 <div className="ic-circle-wrap">
@@ -412,23 +395,22 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="border border-white corde p-8 rounded-[24px]  text-white relative">
+            <div className="border border-white corde p-8 rounded-[24px] text-white relative">
               <div className="offer-card-hero">
                 <img
                   src="https://cdn.prod.website-files.com/6477332607fa08930fe00261/647ef2863d065963ee9c6a2a_decor-wealth%20management.png"
                   loading="lazy"
-                  alt=""
+                  alt="Startup Companies"
                   className="h-[40px] mb-[50px]"
                 />
               </div>
               <h2 className="border-b border-white mb-6 pb-[74px] text-[56px] leading-[58px]">
-                Wealth management
+                Startup Companies
               </h2>
-
               <p className="text-xl font-normal leading-6">
-                Advising individuals and families with our expert team,
-                investing your money based on your goals, and providing access
-                to the Cadro app and Cadro Club community.
+                Invest in the future by supporting innovative startup companies.
+                Our team identifies high-potential startups and provides you
+                with opportunities to be part of their growth journey.
               </p>
               <div className="absolute top-6 right-6 flex items-center justify-center w-[94px] h-[94px] bg-white rounded-full">
                 <div className="ic-circle-wrap">
@@ -465,15 +447,17 @@ function App() {
             }}
             className="object-cover rounded-[24px] bg-center bg-cover w-full h-full m-auto inset-[-100%]"
           >
-            <source src="https://cdn.prod.website-files.com/6477332607fa08930fe00261/648829e97ad23fd8992a626e_CADRO SHOWREEL V2-transcode.mp4" />
+            <source src={vid} />
             <source src="https://cdn.prod.website-files.com/6477332607fa08930fe00261/648829e97ad23fd8992a626e_CADRO SHOWREEL V2-transcode.webm" />
           </video>
         </div>
         <div className="absolute top-0 z-20 content content--full">
           <h2 className="content__title" data-splitting data-effect26>
-            <span className="font-upper font-12 zen-dots-regular">Time is</span>
+            <span className="font-upper font-12 zen-dots-regular">
+              ጊዜ እየጠበበ
+            </span>
             <span className="font-upper font-17 zen-dots-regular">
-              ticking<span className="text-[#FF8E01]">!</span>
+              ነው።<span className="text-[#FF8E01]">!</span>
             </span>
           </h2>
         </div>
@@ -482,30 +466,7 @@ function App() {
             <Item11 />
           </Canvas>
         </div>
-        <div className="relative mt-5 overflow-hidden">
-          {/* <div
-            className="grid h-full gap-5 overflow-hidden group grid-clos-1 md:grid-cols-2 lg:grid-cols-4"
-            data-gird
-          >
-            {items.map((item, index) => (
-              <Wrapper key={index} name={item.name}>
-                <item.component />
-              </Wrapper>
-            ))}
-          </div>
-
-          <div className="fixed top-0 left-0 z-20 w-full h-screen pointer-events-none ">
-            <Canvas
-              camera={{
-                zoom: 0.8,
-              }}
-              className="fixed"
-              eventSource={document.getElementById("root")!}
-            >
-              <View.Port />
-            </Canvas>
-          </div> */}
-        </div>
+        <div className="relative mt-5 overflow-hidden"></div>
       </div>
     </div>
   );
