@@ -17,7 +17,7 @@ import { Item9 } from "./grid/Item9";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Splitting from "splitting";
-import { preloadFonts } from "utils";
+import { preloadFonts } from "./js/utils";
 import vid from "./vid.mp4";
 import Lenis from "@studio-freight/lenis";
 import Logopath from "./logos/logo.png";
