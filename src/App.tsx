@@ -123,7 +123,7 @@ function App() {
             {
               "will-change": "transform",
               transformOrigin: () =>
-                !wordPosition % 2 ? "50% 0%" : "50% 100%",
+                wordPosition % 2 === 0 ? "50% 0%" : "50% 100%",
               scaleY: 0,
             },
             {
