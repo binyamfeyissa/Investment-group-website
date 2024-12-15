@@ -209,7 +209,7 @@ function App() {
   }, []);
 
   const someString = "123";
-  const value = parseInt(someString, 10);
+  const value: number = parseInt(someString, 10);
   const result = value + 10;
 
   return (
