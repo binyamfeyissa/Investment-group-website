@@ -208,9 +208,9 @@ function App() {
     };
   }, []);
 
-  const someString = "123";
+  const someString: string = "123";
   const value: number = parseInt(someString, 10);
-  const result = value + 10;
+  const result: number = value + 10;
 
   return (
     <div className="min-h-screen text-white bg-[#0c0c0c] select-none background">
