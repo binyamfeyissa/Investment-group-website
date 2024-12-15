@@ -1,3 +1,4 @@
-declare module "./utils" {
-  export function preloadFonts(id: string): Promise<void>;
+export function preloadFonts(id: string): Promise<void> {
+  // Implementation here
+  return Promise.resolve();
 }
